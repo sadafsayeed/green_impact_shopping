@@ -16,7 +16,7 @@ class PurchaseView(APIView):
             date = serializer.validated_data.get("purchase_date")
             products = serializer.validated_data.get("products")
             
-            GOOGLE_API_KEY="AIzaSyBsAr6hC4XUqpRZ4CgvUP1J-rgPiPN7Id0"
+            GOOGLE_API_KEY="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
             genai.configure(api_key=GOOGLE_API_KEY)
             model = genai.GenerativeModel("gemini-1.5-flash")
             response = model.generate_content(f"I bought {products} from {store} worth ${amount} on {date}. Did I make an environmentally positive purchase or environmentally negative purchase? Say just one number on a scale from 1 to 10 where 1 is extremely megative and 10 is extremely positive. Don't include a full stop. Only return a number.")
